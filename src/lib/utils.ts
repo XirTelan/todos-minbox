@@ -16,7 +16,7 @@ export const loadTodosFromLocalStorage = () => {
     const todos = localStorage.getItem("todos");
     if (todos) return JSON.parse(todos);
     else return defaultState;
-  } catch (error) {
+  } catch {
     return defaultState;
   }
 };

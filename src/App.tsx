@@ -10,6 +10,7 @@ function App() {
       <ThemeProvider>
         <RootLayout>
           <Provider store={store}>
+            <h1 className=" font-serif text-7xl text-center">TODOS</h1>
             <Todos />
           </Provider>
         </RootLayout>

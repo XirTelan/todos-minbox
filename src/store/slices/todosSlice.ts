@@ -29,7 +29,6 @@ const todosSlice = createSlice({
       });
     },
     changeState: (state, action: PayloadAction<string>) => {
-      console.log("acst", action.payload);
       const todo = state.todos.find((todo) => todo.id == action.payload);
       if (!todo) return;
       todo.isCompleted = !todo.isCompleted;

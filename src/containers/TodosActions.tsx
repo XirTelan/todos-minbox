@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useAppSelector, useAppDispatch } from "@/hooks/hooks";
 import { clearCompletedTodos } from "@/store/slices/todosSlice";
 import { Categories } from "@/types";
+import { toast } from "sonner";
 
 const CATEGORIES: {
   id: Categories;
@@ -23,9 +24,13 @@ export default function TodosActions({
   const dispatch = useAppDispatch();
 
   const handleChange = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    console.log("WTFFFF", e.currentTarget.dataset.id);
     const id = e.currentTarget.dataset.id ?? "all";
     onChange(id as Categories);
+  };
+
+  const handleDelete = () => {
+    dispatch(clearCompletedTodos());
+    toast("All completed task cleared");
   };
 
   return (
@@ -44,10 +49,7 @@ export default function TodosActions({
           </Button>
         ))}
       </div>
-      <Button
-        variant={"destructive"}
-        onClick={() => dispatch(clearCompletedTodos())}
-      >
+      <Button variant={"destructive"} onClick={handleDelete}>
         Clear Completed
       </Button>
     </div>
