@@ -17,7 +17,7 @@ export default function TodosActions({
   onChange,
 }: {
   selected: Categories;
-  onChange: (id: string) => void;
+  onChange: (value: Categories) => void;
 }) {
   const slice = useAppSelector((state) => state.todosSlice);
   const dispatch = useAppDispatch();
@@ -25,7 +25,7 @@ export default function TodosActions({
   const handleChange = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     console.log("WTFFFF", e.currentTarget.dataset.id);
     const id = e.currentTarget.dataset.id ?? "all";
-    onChange(id);
+    onChange(id as Categories);
   };
 
   return (

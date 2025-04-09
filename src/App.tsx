@@ -1,6 +1,6 @@
 import { ThemeProvider } from "./providers/themeProvider";
 import RootLayout from "./components/layout/RootLayout";
-import Todos from "./containers/Todos";
+import Todos from "./widgets/Todos";
 import { Provider } from "react-redux";
 import { store } from "./store/reduxStore";
 
