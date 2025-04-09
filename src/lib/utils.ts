@@ -10,11 +10,12 @@ export function cn(...inputs: ClassValue[]) {
 export const loadTodosFromLocalStorage = () => {
   const defaultState: TodosSlice = {
     todos: [],
+    active: 0,
   };
   try {
     const todos = localStorage.getItem("todos");
-    if (todos) defaultState.todos = JSON.parse(todos);
-    return defaultState;
+    if (todos) return JSON.parse(todos);
+    else return defaultState;
   } catch (error) {
     return defaultState;
   }
@@ -24,7 +25,7 @@ const saveTodosToLocalStorage: Middleware = (store) => (next) => (action) => {
   const result = next(action);
 
   const slice = store.getState().todosSlice;
-  localStorage.setItem("todos", JSON.stringify(slice.todos));
+  localStorage.setItem("todos", JSON.stringify(slice));
 
   return result;
 };
