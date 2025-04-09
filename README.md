@@ -1,5 +1,5 @@
 # Todos
 
 ```
-npm i && npm run dev
+npm i && npm run start
 ```
