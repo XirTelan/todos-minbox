@@ -1,19 +1,18 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import { ModeToggle } from "./components/themeToggle";
 import { ThemeProvider } from "./providers/themeProvider";
+import RootLayout from "./components/layout/RootLayout";
+import Todos from "./containers/Todos";
+import { Provider } from "react-redux";
+import { store } from "./store/reduxStore";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <ThemeProvider>
-        <header>
-          <ModeToggle />
-        </header>
-        <main></main>
+        <RootLayout>
+          <Provider store={store}>
+            <Todos />
+          </Provider>
+        </RootLayout>
       </ThemeProvider>
     </>
   );
