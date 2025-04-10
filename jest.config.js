@@ -5,6 +5,6 @@ export default {
     "^@/(.*)$": "<rootDir>/src/$1",
   },
   transform: {
-    "^.+.tsx?$": ["ts-jest", {}],
+    "^.+\\.tsx?$": ["ts-jest", {}],
   },
 };

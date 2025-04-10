@@ -1,4 +1,4 @@
-import TodoItem from "@/components/TodoItem";
+import TodoItem from "@/components/TodoItem/TodoItem";
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
 import { changeState, deleteTodo } from "@/store/slices/todosSlice";
 import { Categories } from "@/types";

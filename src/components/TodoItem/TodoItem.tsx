@@ -1,8 +1,9 @@
 import { X } from "lucide-react";
-import { Button } from "./ui/button";
-import { Checkbox } from "./ui/checkbox";
+
 import { cn } from "@/lib/utils";
 import { Todo } from "@/types";
+import { Checkbox } from "@radix-ui/react-checkbox";
+import { Button } from "../ui/button";
 
 type TodoItemProps = {
   todo: Todo;

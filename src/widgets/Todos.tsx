@@ -7,8 +7,8 @@ import {
 import { useState } from "react";
 import TodosActions from "../containers/TodosActions";
 import { Categories } from "@/types";
-import TodoInput from "../containers/TodoInput";
-import TodosList from "@/containers/TodosList";
+import TodoInput from "../containers/TodoInput/TodoInput";
+import TodosList from "@/containers/TodoList.tsx/TodosList";
 
 export default function Todos() {
   const [selectedCategory, setSelectedCategory] = useState<Categories>("all");
